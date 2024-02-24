@@ -5,8 +5,6 @@
 This project outlines my journey of fine-tuning the **YOLOv8** model to detect players in different football matches and categorize them into two teams to calculate the final **possession** result.
 **Check out Tryolabs' helpful [blog](https://tryolabs.com/blog/2022/10/17/measuring-soccer-ball-possession-ai-video-analytics), which really helped me understand some key concepts and ideas for my project.** 
 
-**Don't forget to run pip install requirements.txt file**
-
 # Project's Output Sample
 <p align="center">
    <img src="https://github.com/YousofHajHasan/Football_Possession/assets/161046637/c94584f8-54ad-4466-a26a-842a11e54abd" alt="Sample" width="600"/>
@@ -15,6 +13,11 @@ This project outlines my journey of fine-tuning the **YOLOv8** model to detect p
 <p align="center">
     
 </p>
+
+## Installation Notes
+An environment with a GPU can provide significantly faster processing.
+
+**Don't forget to run pip install requirements.txt file**
 
 ## Table of Contents
 
