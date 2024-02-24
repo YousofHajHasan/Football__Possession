@@ -11,7 +11,7 @@ def addScoreboard(scoreboard, img):
 
 
 def scoreBoard(bars, team1_Name, team2_Name):
-    scoreboard = cv2.imread("C:/Users/user/Downloads/Score.png")
+    scoreboard = cv2.imread("Images/Score.png")
     bars = cv2.resize(bars, (517, 57))
     scoreboard_height, scoreboard_width, _ = scoreboard.shape
 
