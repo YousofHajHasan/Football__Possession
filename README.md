@@ -7,7 +7,7 @@ This project outlines my journey of fine-tuning the **YOLOv8** model to detect p
 
 # Project's Output Sample
 <p align="center">
-   <img src="https://github.com/YousofHajHasan/Football_Possession/assets/161046637/c94584f8-54ad-4466-a26a-842a11e54abd" alt="Sample" width="600"/>
+   <img src="https://github.com/YousofHajHasan/Football__Possession/assets/161046637/395803d4-6528-49cb-898b-8ecc0fde4b32" alt="Sample" width="600"/>
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@ The first is for detecting the players, and the other is for detecting the ball.
 ### **Players Dataset** <a id="players-dataset"></a>
 
 <p align="center">
-   <img src="https://github.com/YousofHajHasan/Football_Possession/assets/161046637/44d2b083-63d7-4c66-9952-52afcb7dd7c0" alt="Players" width="500"/> 
+   <img src="https://github.com/YousofHajHasan/Football__Possession/assets/161046637/80c1a954-825f-435f-8cb3-76f42c5ae389" alt="Players" width="500"/> 
 </p>
 
 This dataset was imported from [Roboflow](https://roboflow.com/) website and then adjusted by adding some manually annotated images, and I am particularly grateful to my friends for their generous support in annotating these images.
@@ -65,7 +65,7 @@ Note: At the detecting phase I didn't use the Ball class using this dataset, due
 
 
 <p align="center">
-   <img src="https://github.com/YousofHajHasan/Football_Possession/assets/161046637/865e4338-7508-4ff0-9797-5b138484fe42" alt="Ball" width="500"/> 
+   <img src="https://github.com/YousofHajHasan/Football__Possession/assets/161046637/f87ae900-4187-4e0f-b68c-f78bfbbf0b91" alt="Ball" width="500"/> 
 </p>
 
 
