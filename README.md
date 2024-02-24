@@ -57,9 +57,9 @@ The first is for detecting the players, and the other is for detecting the ball.
 
 This dataset was imported from [Roboflow](https://roboflow.com/) website and then adjusted by adding some manually annotated images, and I am particularly grateful to my friends for their generous support in annotating these images.
 
-This data contains **718** images in basic form, annotated for three classes: Ball, Player, goal Keeper, and Referee. For the final data version, I've combined the Referee, Keeper and the players into one class and done some augmentation techniques, such as hue and brightness adjustment, to get **1920** images in total resized to **640x640**.
+This data contains **718** images in basic form, annotated for three classes: Ball, Player, goalkeeper, and Referee. For the final data version, I've combined the Referee, Keeper, and players into one class and done some augmentation techniques, such as hue and brightness adjustment, to get **1920** images in total resized to **640x640**.
 
-Note: At the detecting phase I didn't use the Ball class using this dataset, due to its poor accuracy in detecting the ball, and I will introduce the ball-only dataset in the next section. So I only used the Players class from this dataset. 
+Note: At the detecting phase, I didn't use the Ball class using this dataset due to its poor accuracy in detecting the ball, and I will introduce the ball-only dataset in the next section. So, I only used the Players class from this dataset. 
 
 ### Ball Dataset <a id="ball-dataset"></a>
 
@@ -71,7 +71,7 @@ Note: At the detecting phase I didn't use the Ball class using this dataset, due
 
 As the Players+Ball dataset performed poorly in ball detection, I started creating data from scratch. First, I collected videos of various football matches and annotated them using [Roboflow](https://roboflow.com/). This generated two versions of the Ball Dataset: one without augmentation techniques and one with. Each version comprises 650 and 1,770 images, respectively.
 
-You can notice that the ball bounding box is relatively big compared to the ball size. This is because when I tried to train the model on a smaller bounding box, it didn't perform well. so for some reason, the bigger box learns and trains the model better.
+You can notice that the ball bounding box is relatively big compared to the ball size. This is because it didn't perform well when I tried to train the model on a smaller bounding box. So, for some reason, the bigger box learns and trains the model better.
 
 
 
@@ -86,7 +86,7 @@ After preparing the data, I began with a single model to detect both players and
 | Ball Model **1** | Overfitted the train data, can be used to test the possession calculating technique | Perfectly detect the ball in the train data, but performing poorly on unseen data
 | Ball Model **2** | Not overfitted, can be used for any match | May have lower accuracy on the training data, but it would be more generalized and applicable to any football matches.
 
-These model were trained using the code on the file **Train the model.py**.
+These models were trained using the code on the file **Train the model.py**.
 
 **Note:** The general ball model was trained on the [not augmented dataset](https://universe.roboflow.com/yousof-hajhasan-ndywi/football-detection-dataset/dataset/2), with freezing the first 8 layers of the Yolov8x version with 64 as the batch size.
 
@@ -110,7 +110,7 @@ I used the fine-tuned player model to find the players bounding boxes in the ima
 
 **2. Focus on the shirt:**
 
-I cropped the player image to get only the player's shirt
+I cropped the player's image to get only the player's shirt.
 
 **3. Identify the shirt:**
 
@@ -129,7 +129,7 @@ You can find the values of the Hue Saturation Value of colors at the **"retrieve
 
 Now, I have the players and ball bounding boxes, so I need to start by calculating the distance between the bottom corners of the players and the center of the ball based on a specific threshold. The closest player to the ball will be classified as the player with the ball. 
 
-**_For the next calculations, see the implementation of the CalPossession function in Possession.py file_** 
+**_For the next calculations, see the implementation of the CalPossession function in the Possession.py file_** 
 
 #### **My method is a points-based system to track possession over time.**
 
@@ -157,9 +157,9 @@ The **interception** must be at least a quarter of a second (FPS/4) to be consid
 
 ### Some Notes To Be Considered
 
-* I have created a simple scoreboard that appears on the top left of the video as you can see in the sample video. That has the possession percentage of the teams with colors representing their shirt color.
+* I have created a simple scoreboard that appears on the top left of the video, as you can see in the sample video. That has the possession percentage of the teams with colors representing their shirt color.
 
-* I've added some videos for testing the model.
+* I've added some videos for testing the model in Videos Directory.
 
 * The run.py file requires input based on the teams in your video. To see a sample output, there's a default input commented in the run.py file. Don't forget to adjust it if needed.
 
@@ -169,7 +169,7 @@ The **interception** must be at least a quarter of a second (FPS/4) to be consid
 
 ### Potential areas for improvement in the project
 
-* Since there are some problems in ball detection accuracy, I think that making more Hyperparameter tuning will help in increasing the model accuracy, That is because I tried Roboflow API for training and I got amazing results.
+* Since there are some problems in ball detection accuracy, I think that more Hyperparameter tuning will help increase the model accuracy. That is because I tried Roboflow API for training and got terrific results.
 
 * To effectively evaluate the capabilities of this project, I would require a video with a consistent camera angle throughout the entire 90 minutes. Additionally, the video should be pre-processed to exclude scenarios that the model isn't designed to handle, such as goal kicks, corner kicks, and throw-ins.
 
